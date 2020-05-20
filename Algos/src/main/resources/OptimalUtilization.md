@@ -1,6 +1,6 @@
 ### Problem Statement
 
-https://leetcode.com/discuss/interview-question/37320
+https://leetcode.com/discuss/interview-question/373202
 
 Given 2 lists a and b. Each element is a pair of integers where the first integer 
 represents the unique id and the second integer represents a value. Your task is 
