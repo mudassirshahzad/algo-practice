@@ -8,9 +8,9 @@ public class TreasureIslandMinimumSteps {
 
     // Problem statement - src/main/resources/TreasureIslandMinimumSteps.md
 
-    public static int getMinimumSteps(char[][] island) {
+    public static int getMinimumSteps(char[][] map) {
 
-        if (island == null || island.length == 0) return 0;
+        if (map == null || map.length == 0) return 0;
 
         int steps = 0;
 
@@ -25,7 +25,7 @@ public class TreasureIslandMinimumSteps {
 
         // island.length gives you number of rows
         // island[0].length gives you number of columns
-        boolean[][] visited = new boolean[island.length][island[0].length];
+        boolean[][] visited = new boolean[map.length][map[0].length];
         visited[0][0] = Boolean.TRUE;
 
         while (!queue.isEmpty()) {
@@ -37,15 +37,15 @@ public class TreasureIslandMinimumSteps {
                 int x = currentCoordinate.x;
                 int y = currentCoordinate.y;
 
-                if (island[x][y] == 'X') return steps;
+                if (map[x][y] == 'X') return steps;
 
                 Arrays.stream(directions).forEach(direction -> {
 
                     int newX = x + direction[0];
                     int newY = y + direction[1];
 
-                    if (newX >= 0 && newY >= 0 && newX < island.length && newY < island[0].length &&
-                        !visited[newX][newY] && island[newX][newY] != 'D') {
+                    if (newX >= 0 && newY >= 0 && newX < map.length && newY < map[0].length &&
+                        !visited[newX][newY] && map[newX][newY] != 'D') {
 
                         visited[newX][newY] = Boolean.TRUE;
                         queue.add(new Coordinate(newX, newY));
@@ -64,13 +64,18 @@ public class TreasureIslandMinimumSteps {
 
         // Case 1
         char[][] island = getSampleIsland1();
-        int result = getMinimumSteps(island);
-        System.out.println(String.format("%s ", result));
+        int result1 = getMinimumSteps(island);
 
         // Case 2
         island = getSampleIsland2();
-        result = getMinimumSteps(island);
-        System.out.println(String.format("%s ", result));
+        int result2 = getMinimumSteps(island);
+
+        if (result1 == 5 && result2 == 7) {
+            System.out.println("All Test Cases Passed!");
+        }
+        else {
+            System.out.println("There are test failures!");
+        }
 
     }
 
