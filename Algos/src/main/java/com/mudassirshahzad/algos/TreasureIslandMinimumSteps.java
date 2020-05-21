@@ -28,6 +28,7 @@ public class TreasureIslandMinimumSteps {
         boolean[][] visited = new boolean[map.length][map[0].length];
         visited[0][0] = Boolean.TRUE;
 
+        // bfs
         while (!queue.isEmpty()) {
 
             int size = queue.size(); // Getting the size before the loop because the queue size changes during the loop
