@@ -1,6 +1,6 @@
 ### Problem Statement - Treasure Island
 
-https://leetcode.com/discuss/interview-question/41135
+https://leetcode.com/discuss/interview-question/411357/
 
 Given a 2D grid, each cell is either a zombie 1 or a human 0. Zombies can turn adjacent 
 (up/down/left/right) human beings into zombies every hour. Find out how many hours 
