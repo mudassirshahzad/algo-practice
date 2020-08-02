@@ -11,6 +11,19 @@ import java.util.stream.Collectors;
 public class OptimalUtilization {
 
     // Problem statement - src/main/resources/OptimalUtilization.md
+    /*
+     * Correct Output for this class should be
+     * --------------------
+     * [2, 1]
+     * --------------------
+     * [2, 4]
+     * [3, 2]
+     * --------------------
+     * [3, 1]
+     * --------------------
+     * [1, 3]
+     * [3, 2]
+     */
 
     public static void main(String... strings) {
 
