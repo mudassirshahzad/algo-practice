@@ -9,7 +9,7 @@ class BalanceTheBrackets {
         BalanceTheBrackets obj = new BalanceTheBrackets();
         String sample1 = "[]{}(){}()()()()[][][][][]";
         String sample2 = "[{([{([{(())}])}])}]";
-        String sample3 = "[{([{([{(())}])}])}";
+        String sample3 = "]{}()[]";
 
         if (obj.areBalanced(sample1) == Boolean.TRUE &&
             obj.areBalanced(sample2) == Boolean.TRUE &&
