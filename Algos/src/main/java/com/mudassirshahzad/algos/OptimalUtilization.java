@@ -122,7 +122,7 @@ public class OptimalUtilization {
             b.stream().forEach(bElement -> {
 
                 int sum = aElement[1] + bElement[1];
-                List<int[]> ids = sumMap.getOrDefault(aElement[1] + bElement[1], new ArrayList<int[]>());
+                List<int[]> ids = sumMap.getOrDefault(sum, new ArrayList<int[]>());
                 ids.add(new int[] { aElement[0], bElement[0] });
                 sumMap.put(sum, ids);
             });
