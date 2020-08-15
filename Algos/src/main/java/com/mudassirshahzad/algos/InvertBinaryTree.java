@@ -9,17 +9,25 @@ class InvertBinaryTree {
 
         BinaryTreePrinter.printNode(test1());
 
+        Node<Integer> rootInverted = invertTree(test1());
+
+        BinaryTreePrinter.printNode(rootInverted);
+
     }
 
-    public static Node<Integer> invertTree(Node<Integer> root){
-        
-        if(root == null) {
+    public static Node<Integer> invertTree(Node<Integer> root) {
+
+        if (root == null) {
             return root;
         }
-        
-        Node
-        
-        return null;
+
+        Node<Integer> left = invertTree(root.left);
+        Node<Integer> right = invertTree(root.right);
+
+        root.left = right;
+        root.right = left;
+
+        return root;
     }
 
     private static Node<Integer> test1() {
