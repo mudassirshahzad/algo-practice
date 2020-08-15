@@ -1,4 +1,4 @@
-package com.mudassirshahzad.algos;
+package com.mudassirshahzad.algos.utils;
 
 public class Utils {
 
