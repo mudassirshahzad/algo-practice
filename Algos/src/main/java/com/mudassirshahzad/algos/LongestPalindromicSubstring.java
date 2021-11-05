@@ -24,7 +24,7 @@ class LongestPalindromicSubstring {
         // Iterate through the string and check whether each character is a possible center of a possible palindrome
         for (int start = 0; start < strLength; start++) {
             expandRange(s, start, start);
-            expandRange(s, start, start + 1);
+            // expandRange(s, start, start + 1);
         }
 
         return s.substring(resultStart, resultStart + resultLength);
