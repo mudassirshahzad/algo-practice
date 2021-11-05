@@ -1,14 +1,15 @@
 package com.mudassirshahzad.algos;
 
-class LongestPalindromicSubstring {
+class Palindrome {
 
     public static void main(String... strings) {
 
-        String inputString = "aaaaaabsskkddfjffjasflkjsflkjasfljsdflkjasljsflskjfracecarslkjsdflkjjsdfkhsdflkhsdflkhasflkhasdflkjbbabbabb";
-//        String inputString = "bracecard";
+//        String inputString = "aaaaaabsskkddfjffjasflkjsflkjasfljsdflkjasljsflskjfracecarslkjsdflkjjsdfkhsdflkhsdflkhasflkhasdflkjbbabbabb";
+        String inputString = "raceecar";
 
         String subString = new LongestPalindromicSubstring().longestPalindrome(inputString);
         System.out.println("Longest palindromic substring = " + subString);
+
     }
 
     int resultStart;
@@ -21,9 +22,14 @@ class LongestPalindromicSubstring {
         }
 
         // Iterate through the string and check whether each character is a possible center of a possible palindrome
-        for (int start = 0; start < strLength; start++) {
-            expandRange(s, start, start);
-//            expandRange(s, start, start + 1);
+        if(strLength % 2 == 0){
+
+            // even
+            expandRange(s, strLength / 2 - 1, strLength / 2 - 1);
+        } else{
+
+            // odd
+            expandRange(s, strLength % 2, strLength % 2);
         }
 
         System.out.println("expandRange() called " + count + " times");
