@@ -9,12 +9,38 @@ public class Node<T extends Comparable<?>> {
         this.data = data;
     }
 
-    public static void display(Node head) {
+    public static void displaySinglyList(Node head) {
         Node current = head;
-        while(current != null) {
+        while (current != null) {
             System.out.print(current.data + " --> ");
             current = current.right;
         }
         System.out.print("null");
+    }
+
+    public static void displayForward(Node head) {
+        if(head == null) {
+            return;
+        }
+
+        Node temp = head;
+        while(temp != null) {
+            System.out.print(temp.data + " --> ");
+            temp = temp.right;
+        }
+        System.out.println("null");
+    }
+
+    public static void displayBackward(Node tail) {
+        if(tail == null) {
+            return;
+        }
+
+        Node temp = tail;
+        while(temp != null) {
+            System.out.print(temp.data + " --> ");
+            temp = temp.left;
+        }
+        System.out.println("null");
     }
 }

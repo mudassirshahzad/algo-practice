@@ -7,10 +7,10 @@ public class ReverseSinglyLinkedList {
     public static void main(String[] args) {
 
         Node<Integer> linkedList = getSinglyLinkedList();
-        Node.display(linkedList);
+        Node.displaySinglyList(linkedList);
         System.out.println("\n");
         Node<Integer> reversed = reverseLinkedList(linkedList);
-        Node.display(reversed);
+        Node.displayForward(reversed);
 
     }
 
