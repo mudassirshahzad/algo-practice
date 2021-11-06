@@ -2,12 +2,12 @@ package com.mudassirshahzad.algos;
 
 import java.util.Arrays;
 
-class UnionAndIntersection {
+class FindUnionAndIntersectionOfTwoArrays {
 
 
     public static void main(String[] args) {
-        UnionAndIntersection unionAndIntersection
-                = new UnionAndIntersection();
+        FindUnionAndIntersectionOfTwoArrays unionAndIntersection
+                = new FindUnionAndIntersectionOfTwoArrays();
         int[] arr1 = {7, 1, 5, 2, 3, 6};
         int[] arr2 = {3, 8, 6, 20, 7};
         int m = arr1.length;

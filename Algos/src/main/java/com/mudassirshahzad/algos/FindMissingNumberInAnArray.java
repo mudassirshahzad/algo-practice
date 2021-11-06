@@ -1,6 +1,6 @@
 package com.mudassirshahzad.algos;
 
-class Main {
+class FindMissingNumberInAnArray {
 
     public static void main(String[] args) {
         int[] arr = {10, 11, 12, 14, 15};

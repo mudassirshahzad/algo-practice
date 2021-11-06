@@ -11,7 +11,7 @@ class Find2ndLargestElementInArray {
 
         print2ndlargestInNLogNTime(arr, n);
 
-        print2ndLargestInNTIme(arr, n);
+        print2ndLargestInNTime(arr, n);
     }
 
     static void print2ndlargestInNLogNTime(int arr[],
@@ -48,7 +48,7 @@ class Find2ndLargestElementInArray {
     }
 
     // Function to print the second largest elements
-    static void print2ndLargestInNTIme(int arr[], int arr_size) {
+    static void print2ndLargestInNTime(int arr[], int arr_size) {
 
         // Time = O(n), Space = (1)
 
