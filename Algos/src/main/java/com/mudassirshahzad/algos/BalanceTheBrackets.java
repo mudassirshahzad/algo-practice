@@ -9,15 +9,14 @@ class BalanceTheBrackets {
         BalanceTheBrackets obj = new BalanceTheBrackets();
         String sample1 = "[]{}(){}()()()()[][][][][]";
         String sample2 = "[{([{([{(())}])}])}]";
-        String sample3 = "]{}()[]";
+        String sample3 = "]})}{}()[]";
 
         if (obj.areBalanced(sample1) == Boolean.TRUE &&
-            obj.areBalanced(sample2) == Boolean.TRUE &&
-            obj.areBalanced(sample3) == Boolean.FALSE) {
+                obj.areBalanced(sample2) == Boolean.TRUE &&
+                obj.areBalanced(sample3) == Boolean.FALSE) {
 
             System.out.println("All tests passed");
-        }
-        else {
+        } else {
 
             System.out.println("Tests failures");
         }
@@ -30,27 +29,29 @@ class BalanceTheBrackets {
             return Boolean.FALSE;
         }
 
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < brackets.length(); i++) {
 
-            if (brackets.charAt(i) == '(' || brackets.charAt(i) == '{' || brackets.charAt(i) == '[') {
+            char currentCharacter = brackets.charAt(i);
+
+            if (currentCharacter == '(' || currentCharacter == '{' || currentCharacter == '[') {
                 stack.push(brackets.charAt(i));
-            }
-            else {
+            } else {
 
                 if (stack.isEmpty()) {
                     return Boolean.FALSE;
                 }
 
                 char top = stack.pop();
-                if (brackets.charAt(i) == ')' && top != '(') {
+                if (currentCharacter == ')' && top != '(') {
+
                     return Boolean.FALSE;
-                }
-                else if (brackets.charAt(i) == '}' && top != '{') {
+                } else if (currentCharacter == '}' && top != '{') {
+
                     return Boolean.FALSE;
-                }
-                else if (brackets.charAt(i) == ']' && top != '[') {
+                } else if (currentCharacter == ']' && top != '[') {
+
                     return Boolean.FALSE;
                 }
 
