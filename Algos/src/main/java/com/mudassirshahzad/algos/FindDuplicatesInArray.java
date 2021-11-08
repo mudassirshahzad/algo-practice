@@ -15,7 +15,7 @@ public class FindDuplicatesInArray {
         int[] intArray2 = {3, 4, 6, 8, 8, 5, 2, 6, 7};
         System.out.println(new FindDuplicatesInArray().findDuplicates2(intArray2));
 
-        int[] intArray3 = {3, 12, 6, 8, 12, 5, 2, 6, 7};
+        int[] intArray3 = {3, 12, 6, 8, 12, 5, 2, 6, 45, 45};
         System.out.println(new FindDuplicatesInArray().findDuplicates3(intArray3));
 
     }

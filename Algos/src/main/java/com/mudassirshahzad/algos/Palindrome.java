@@ -5,59 +5,34 @@ class Palindrome {
     public static void main(String... strings) {
 
 //        String inputString = "aaaaaabsskkddfjffjasflkjsflkjasfljsdflkjasljsflskjfracecarslkjsdflkjjsdfkhsdflkhsdflkhasflkhasdflkjbbabbabb";
-        String inputString = "raceecar";
+        String inputString = "raceeddffddeecar";
 
-        String subString = new LongestPalindromicSubstring().longestPalindrome(inputString);
-        System.out.println("Longest palindromic substring = " + subString);
+        boolean subString = new Palindrome().longestPalindrome(inputString);
+        System.out.println("Is palindrome " + subString);
 
     }
 
-    int resultStart;
-    int resultLength;
-
-    public String longestPalindrome(String s) {
+    public boolean longestPalindrome(String s) {
         int strLength = s.length();
         if (strLength < 2) {
-            return s;
+            return true;
         }
 
-        // Iterate through the string and check whether each character is a possible center of a possible palindrome
-        if(strLength % 2 == 0){
-
-            // even
-            expandRange(s, strLength / 2 - 1, strLength / 2 - 1);
-        } else{
-
-            // odd
-            expandRange(s, strLength % 2, strLength % 2);
-        }
-
-        System.out.println("expandRange() called " + count + " times");
-        return s.substring(resultStart, resultLength + resultStart);
+        return checkIfPalindrome(s, 0, s.length() - 1);
     }
 
-    int count = 0;
+    private boolean checkIfPalindrome(String str, int left, int right) {
 
-    private void expandRange(String str, int begin, int end) {
+        while (left <= right) {
 
-        count++;
-
-        System.out.println("expandRange(str=" + str + ", begin=" + begin + ", end=" + end + ")");
-
-        while (begin >= 0 && end < str.length() &&
-                str.charAt(begin) == str.charAt(end)) {
-
-            begin--;
-            end++;
+            if(str.charAt(left) != str.charAt(right)) {
+                return false;
+            } else{
+                left ++;
+                right --;
+            }
         }
 
-        int tempResultLength = end - begin - 1;
-        int tempResultStart = begin + 1;
-
-        if (resultLength < end - begin - 1) {
-            resultStart = begin + 1;
-            resultLength = end - begin - 1;
-        }
-
+        return true;
     }
 }

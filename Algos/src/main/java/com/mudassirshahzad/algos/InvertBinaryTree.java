@@ -1,7 +1,7 @@
 package com.mudassirshahzad.algos;
 
 import com.mudassirshahzad.algos.utils.BinaryTreePrinter;
-import com.mudassirshahzad.algos.utils.Node;
+import com.mudassirshahzad.algos.utils.TreeNode;
 
 class InvertBinaryTree {
 
@@ -9,20 +9,20 @@ class InvertBinaryTree {
 
         BinaryTreePrinter.printNode(test1());
 
-        Node<Integer> rootInverted = invertTree(test1());
+        TreeNode<Integer> rootInverted = invertTree(test1());
 
         BinaryTreePrinter.printNode(rootInverted);
 
     }
 
-    public static Node<Integer> invertTree(Node<Integer> root) {
+    public static TreeNode<Integer> invertTree(TreeNode<Integer> root) {
 
         if (root == null) {
             return root;
         }
 
-        Node<Integer> left = invertTree(root.left);
-        Node<Integer> right = invertTree(root.right);
+        TreeNode<Integer> left = invertTree(root.left);
+        TreeNode<Integer> right = invertTree(root.right);
 
         root.left = right;
         root.right = left;
@@ -30,17 +30,17 @@ class InvertBinaryTree {
         return root;
     }
 
-    private static Node<Integer> test1() {
-        Node<Integer> root = new Node<Integer>(4);
+    private static TreeNode<Integer> test1() {
+        TreeNode<Integer> root = new TreeNode<Integer>(4);
 
-        Node<Integer> n11 = new Node<Integer>(2);
-        Node<Integer> n12 = new Node<Integer>(7);
+        TreeNode<Integer> n11 = new TreeNode<Integer>(2);
+        TreeNode<Integer> n12 = new TreeNode<Integer>(7);
 
-        Node<Integer> n21 = new Node<Integer>(1);
-        Node<Integer> n22 = new Node<Integer>(3);
+        TreeNode<Integer> n21 = new TreeNode<Integer>(1);
+        TreeNode<Integer> n22 = new TreeNode<Integer>(3);
 
-        Node<Integer> n23 = new Node<Integer>(6);
-        Node<Integer> n24 = new Node<Integer>(9);
+        TreeNode<Integer> n23 = new TreeNode<Integer>(6);
+        TreeNode<Integer> n24 = new TreeNode<Integer>(9);
 
         root.left = n11;
         root.right = n12;
@@ -54,16 +54,16 @@ class InvertBinaryTree {
         return root;
     }
 
-    private static Node<Integer> test2() {
-        Node<Integer> root = new Node<Integer>(2);
-        Node<Integer> n11 = new Node<Integer>(7);
-        Node<Integer> n12 = new Node<Integer>(5);
-        Node<Integer> n21 = new Node<Integer>(2);
-        Node<Integer> n22 = new Node<Integer>(6);
-        Node<Integer> n23 = new Node<Integer>(9);
-        Node<Integer> n31 = new Node<Integer>(5);
-        Node<Integer> n32 = new Node<Integer>(8);
-        Node<Integer> n33 = new Node<Integer>(4);
+    private static TreeNode<Integer> test2() {
+        TreeNode<Integer> root = new TreeNode<Integer>(2);
+        TreeNode<Integer> n11 = new TreeNode<Integer>(7);
+        TreeNode<Integer> n12 = new TreeNode<Integer>(5);
+        TreeNode<Integer> n21 = new TreeNode<Integer>(2);
+        TreeNode<Integer> n22 = new TreeNode<Integer>(6);
+        TreeNode<Integer> n23 = new TreeNode<Integer>(9);
+        TreeNode<Integer> n31 = new TreeNode<Integer>(5);
+        TreeNode<Integer> n32 = new TreeNode<Integer>(8);
+        TreeNode<Integer> n33 = new TreeNode<Integer>(4);
 
         root.left = n11;
         root.right = n12;

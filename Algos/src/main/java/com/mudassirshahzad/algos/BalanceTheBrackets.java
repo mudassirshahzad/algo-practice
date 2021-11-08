@@ -36,7 +36,7 @@ class BalanceTheBrackets {
             char currentCharacter = brackets.charAt(i);
 
             if (currentCharacter == '(' || currentCharacter == '{' || currentCharacter == '[') {
-                stack.push(brackets.charAt(i));
+                stack.push(currentCharacter);
             } else {
 
                 if (stack.isEmpty()) {

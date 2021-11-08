@@ -1,45 +1,45 @@
 package com.mudassirshahzad.algos.utils;
 
-public class Node<T extends Comparable<?>> {
-    public Node<T> left;
-    public Node<T> right;
+public class ListNode<T extends Comparable<?>> {
+    public ListNode<T> next;
+    public ListNode<T> previous;
     public T data;
 
-    public Node(T data) {
+    public ListNode(T data) {
         this.data = data;
     }
 
-    public static void displaySinglyList(Node head) {
-        Node current = head;
+    public static void displaySinglyList(ListNode head) {
+        ListNode current = head;
         while (current != null) {
             System.out.print(current.data + " --> ");
-            current = current.right;
+            current = current.next;
         }
         System.out.print("null");
     }
 
-    public static void displayForward(Node head) {
+    public static void displayForward(ListNode head) {
         if(head == null) {
             return;
         }
 
-        Node temp = head;
+        ListNode temp = head;
         while(temp != null) {
             System.out.print(temp.data + " --> ");
-            temp = temp.right;
+            temp = temp.next;
         }
         System.out.println("null");
     }
 
-    public static void displayBackward(Node tail) {
+    public static void displayBackward(ListNode tail) {
         if(tail == null) {
             return;
         }
 
-        Node temp = tail;
+        ListNode temp = tail;
         while(temp != null) {
             System.out.print(temp.data + " --> ");
-            temp = temp.left;
+            temp = temp.previous;
         }
         System.out.println("null");
     }

@@ -1,28 +1,28 @@
 package com.mudassirshahzad.algos;
 
-import com.mudassirshahzad.algos.utils.Node;
+import com.mudassirshahzad.algos.utils.TreeNode;
 
 public class ReverseSinglyLinkedList {
 
     public static void main(String[] args) {
 
-        Node<Integer> linkedList = getSinglyLinkedList();
-        Node.displaySinglyList(linkedList);
+        TreeNode<Integer> linkedList = getSinglyLinkedList();
+        TreeNode.displaySinglyList(linkedList);
         System.out.println("\n");
-        Node<Integer> reversed = reverseLinkedList(linkedList);
-        Node.displayForward(reversed);
+        TreeNode<Integer> reversed = reverseLinkedList(linkedList);
+        TreeNode.displayForward(reversed);
 
     }
 
-    private static Node<Integer> reverseLinkedList(Node<Integer> head){
+    private static TreeNode<Integer> reverseLinkedList(TreeNode<Integer> head){
 
         if(head == null) {
             return null;
         }
 
-        Node<Integer> current = head;
-        Node<Integer> previous = null;
-        Node<Integer> next = null;
+        TreeNode<Integer> current = head;
+        TreeNode<Integer> previous = null;
+        TreeNode<Integer> next = null;
 
         while(current != null){
 
@@ -35,13 +35,13 @@ public class ReverseSinglyLinkedList {
         return previous;
     }
 
-    private static Node<Integer> getSinglyLinkedList() {
-        Node<Integer> head = new Node<Integer>(4);
+    private static TreeNode<Integer> getSinglyLinkedList() {
+        TreeNode<Integer> head = new TreeNode<Integer>(4);
 
-        Node<Integer> n1 = new Node<Integer>(2);
-        Node<Integer> n2 = new Node<Integer>(7);
-        Node<Integer> n3 = new Node<Integer>(1);
-        Node<Integer> n4 = new Node<Integer>(3);
+        TreeNode<Integer> n1 = new TreeNode<Integer>(2);
+        TreeNode<Integer> n2 = new TreeNode<Integer>(7);
+        TreeNode<Integer> n3 = new TreeNode<Integer>(1);
+        TreeNode<Integer> n4 = new TreeNode<Integer>(3);
 
         head.right = n1;
         n1.right = n2;

@@ -27,7 +27,7 @@ class Find2ndLargestElementInArray {
             return;
         }
 
-        // Takes O(n)
+        // Takes O(nlogn)
         Arrays.sort(arr);
 
         // Start from second last element
@@ -81,5 +81,3 @@ class Find2ndLargestElementInArray {
     }
 
 }
-
-// This code is contributed by Amit Katiyar
