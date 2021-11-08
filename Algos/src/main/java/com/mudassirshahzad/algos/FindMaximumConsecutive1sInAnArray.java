@@ -3,7 +3,7 @@ package com.mudassirshahzad.algos;
 class FindMaximumConsecutive1sInAnArray {
 
     public static void main(String[] args) {
-        boolean arr[] = {true, true, false, false,
+        boolean[] arr = {true, true, false, false,
                 true, false, true, false,
                 true, true, true, true};
 

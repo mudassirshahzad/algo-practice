@@ -34,24 +34,56 @@ class ContinuousSubArraysHavingSumEqualToK {
         return null;
     }
 
-    public static int subArraySum(int[] nums, int k) {
+    public static int subArraySum(int[] nums, int sum) {
 
         // Time = O(n)
         if (nums == null || nums.length == 0) return 0;
-        int sum = 0;
+        int currentSum = 0;
         int count = 0;
 
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            if (sum == k) {
+            currentSum += nums[i];
+            if (currentSum == sum) {
                 count++;
             }
-            if (map.containsKey(sum - k)) {
-                count += map.get(sum - k);
+            if (map.containsKey(currentSum - sum)) {
+                count += map.get(currentSum - sum);
             }
-            map.put(sum, map.getOrDefault(sum, 0) + 1);
+            map.put(currentSum, map.getOrDefault(currentSum, 0) + 1);
         }
         return count;
+    }
+
+    public static void subArraySum2(int[] nums, int sum) {
+
+        // Time = O(n)
+        if (nums == null || nums.length == 0) System.out.println("Nums length should be greather than 0");
+        int currentSum = 0;
+        int start = 0;
+        int end = -1;
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            currentSum += nums[i];
+            if (currentSum - sum == 0) {
+                start = 0;
+                end = i;
+                break;
+            }
+            if (map.containsKey(currentSum - sum)) {
+                start = map.get(currentSum - sum) + 1;
+                end = i;
+                break;
+            }
+            map.put(currentSum, map.getOrDefault(currentSum, 0) + 1);
+        }
+
+        if (end == -1) {
+            System.out.println("Not found");
+        } else {
+
+            System.out.println("Start = ".concat(start + "").concat(" and End = ".concat(end + "")));
+        }
     }
 }

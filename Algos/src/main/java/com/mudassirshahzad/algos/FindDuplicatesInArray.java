@@ -12,10 +12,7 @@ public class FindDuplicatesInArray {
         int[] intArray = {3, 4, 6, 8, 8, 5, 9, 6, 7};
         System.out.println(new FindDuplicatesInArray().findDuplicates1(intArray));
 
-        int[] intArray2 = {3, 4, 6, 8, 8, 5, 2, 6, 7};
-        System.out.println(new FindDuplicatesInArray().findDuplicates2(intArray2));
-
-        int[] intArray3 = {3, 12, 6, 8, 12, 5, 2, 6, 45, 45};
+        int[] intArray3 = {3, 12, 6, 80, 8, 12, 80, 5, 2, 6, 45, 45};
         System.out.println(new FindDuplicatesInArray().findDuplicates3(intArray3));
 
     }
@@ -29,22 +26,6 @@ public class FindDuplicatesInArray {
                 if(nums[i] == nums[j]){
                     duplicates.add(nums[i]);
                 }
-            }
-        }
-        return duplicates;
-    }
-
-    public List<Integer> findDuplicates2(int[] nums){
-
-        // Time = O(n), Space = O(1)
-        List<Integer> duplicates = new ArrayList<>();
-        int[] count = new int[nums.length];
-        for(int i = 0; i < nums.length; i++){
-
-            if(count[nums[i]] == 1){
-                duplicates.add(nums[i]);
-            } else{
-                count[nums[i]]++;
             }
         }
         return duplicates;

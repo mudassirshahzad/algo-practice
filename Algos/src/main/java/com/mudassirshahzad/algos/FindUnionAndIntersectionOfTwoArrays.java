@@ -1,6 +1,8 @@
 package com.mudassirshahzad.algos;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 class FindUnionAndIntersectionOfTwoArrays {
 
@@ -13,6 +15,9 @@ class FindUnionAndIntersectionOfTwoArrays {
         int m = arr1.length;
         int n = arr2.length;
 
+        printUnionUsingSet(arr1, arr2);
+        printIntersectionUsingSet(arr1, arr2);
+
         // Function call
         System.out.println("Union of two arrays is ");
         unionAndIntersection.printUnion(arr1, arr2, m, n);
@@ -20,6 +25,34 @@ class FindUnionAndIntersectionOfTwoArrays {
         System.out.println(
                 "Intersection of two arrays is ");
         unionAndIntersection.printIntersection(arr1, arr2, m, n);
+    }
+
+    private static void printUnionUsingSet(int[] arr1, int[] arr2) {
+
+        Set<Integer> set = new HashSet<>();
+        for(int i: arr1){
+            set.add(i);
+        }
+        for(int j: arr2){
+            set.add(j);
+        }
+        System.out.println(set);
+    }
+
+    private static void printIntersectionUsingSet(int[] arr1, int[] arr2) {
+
+        Set<Integer> set = new HashSet<>();
+        int count = 0;
+        for(int i: arr1){
+            set.add(i);
+        }
+        for(int j: arr2){
+            if(set.contains(j)){
+                count++;
+                set.remove(j);
+            }
+        }
+        System.out.println(set);
     }
 
     // Prints union of arr1[0..m-1] and arr2[0..n-1]
